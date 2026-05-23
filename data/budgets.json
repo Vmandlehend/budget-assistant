@@ -1,9 +1,9 @@
 {
-  "Groceries": 500,
-  "Dining": 300,
-  "Transport": 200,
+  "Dining": 800,
   "Entertainment": 150,
-  "Utilities": 200,
+  "Groceries": 500,
   "Health": 100,
-  "Other": 200
+  "Other": 200,
+  "Transport": 200,
+  "Utilities": 200
 }
