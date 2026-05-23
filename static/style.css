@@ -1,0 +1,186 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f7fa;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+header {
+  background: #1a1a2e;
+  color: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 { font-size: 1.4rem; font-weight: 600; }
+
+.month-picker input {
+  background: #2a2a4e;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.9rem;
+  color-scheme: dark;
+}
+
+main { max-width: 960px; margin: 2rem auto; padding: 0 1.5rem; }
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.card .label { font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; }
+.card .value { font-size: 1.6rem; font-weight: 700; }
+
+/* Section */
+.section {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.section h2 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: #333; }
+
+/* Category grid */
+#categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.cat-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.cat-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; }
+.cat-name { font-weight: 600; }
+.cat-amounts { color: #555; font-size: 0.82rem; }
+
+.progress-bar {
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.status-ok    { background: #22c55e; }
+.status-warn  { background: #f59e0b; }
+.status-over  { background: #ef4444; }
+
+.cat-remaining { font-size: 0.78rem; margin-top: 0.4rem; color: #777; }
+.cat-remaining.over { color: #ef4444; font-weight: 600; }
+
+/* Form */
+.form-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.form-row input, .form-row select {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.form-row button, button[type="submit"] {
+  background: #1a1a2e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.form-row button:hover, button[type="submit"]:hover { background: #2a2a4e; }
+
+.upload-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.upload-btn {
+  display: inline-block;
+  background: #f1f5f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.45rem 1rem;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.upload-btn:hover { background: #e2e8f0; }
+#uploadStatus { font-size: 0.85rem; color: #22c55e; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 2px solid #eee; color: #888; font-weight: 600; font-size: 0.78rem; text-transform: uppercase; }
+td { padding: 0.6rem 0.75rem; border-bottom: 1px solid #f0f0f0; }
+tr:last-child td { border-bottom: none; }
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 0.3rem;
+}
+.delete-btn:hover { color: #ef4444; }
+
+/* Budget settings */
+#budgetInputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.budget-field { display: flex; flex-direction: column; gap: 0.3rem; }
+.budget-field label { font-size: 0.82rem; color: #555; }
+.budget-field input {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.alert { padding: 0.6rem 1rem; border-radius: 6px; font-size: 0.85rem; margin-bottom: 1rem; }
+.alert-warn { background: #fef3c7; color: #92400e; }
+.alert-over  { background: #fee2e2; color: #991b1b; }

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Budget Assistant</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Budget Assistant</h1>
+    <div class="month-picker">
+      <label>Month: <input type="month" id="monthPicker" /></label>
+    </div>
+  </header>
+
+  <main>
+    <!-- Summary Cards -->
+    <section class="cards">
+      <div class="card">
+        <span class="label">Total Budget</span>
+        <span class="value" id="totalBudget">—</span>
+      </div>
+      <div class="card">
+        <span class="label">Total Spent</span>
+        <span class="value" id="totalSpent">—</span>
+      </div>
+      <div class="card">
+        <span class="label">Remaining</span>
+        <span class="value" id="totalRemaining">—</span>
+      </div>
+    </section>
+
+    <!-- Category Breakdown -->
+    <section class="section">
+      <h2>Category Breakdown</h2>
+      <div id="categoryGrid"></div>
+    </section>
+
+    <!-- Add Expense -->
+    <section class="section">
+      <h2>Add Expense</h2>
+      <form id="expenseForm">
+        <div class="form-row">
+          <input type="date" id="expDate" required />
+          <input type="text" id="expDesc" placeholder="Description" required />
+          <select id="expCategory"></select>
+          <input type="number" id="expAmount" placeholder="Amount ($)" step="0.01" min="0.01" required />
+          <button type="submit">Add</button>
+        </div>
+      </form>
+
+      <div class="upload-row">
+        <label class="upload-btn">
+          Upload CSV
+          <input type="file" id="csvUpload" accept=".csv" hidden />
+        </label>
+        <span id="uploadStatus"></span>
+      </div>
+    </section>
+
+    <!-- Expense List -->
+    <section class="section">
+      <h2>Expenses <span id="expenseMonth"></span></h2>
+      <table id="expenseTable">
+        <thead>
+          <tr>
+            <th>Date</th><th>Description</th><th>Category</th><th>Amount</th><th></th>
+          </tr>
+        </thead>
+        <tbody id="expenseBody"></tbody>
+      </table>
+    </section>
+
+    <!-- Budget Settings -->
+    <section class="section">
+      <h2>Budget Settings</h2>
+      <form id="budgetForm">
+        <div id="budgetInputs"></div>
+        <button type="submit">Save Budgets</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
